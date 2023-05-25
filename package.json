@@ -1,6 +1,6 @@
 {
   "name": "simply-express-generator",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A simple express generator utility for barebones Express/TS projects",
   "main": "dist/index.js",
   "bin": {

@@ -14,7 +14,7 @@ export async function MainProgram(argv: string[]) {
       .description('Create a new project')
       .action(async (projectName: string) => {
         console.log(`Creating a new project: ${projectName}`);
-        const templateDir = path.resolve(__dirname, '../template/simply-express-ts');
+        const templateDir = path.resolve(__dirname, '../../template/simply-express-ts');
         const targetDir = path.resolve(process.cwd(), projectName);
   
         await fs.copy(templateDir, targetDir);
