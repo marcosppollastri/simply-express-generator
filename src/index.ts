@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import * as moduleAlias from 'module-alias';
+moduleAlias.addAlias('@src', __dirname);
 import { Command } from 'commander';
 import * as fs from 'fs-extra';
 import * as path from 'node:path';
