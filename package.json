@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "description": "A simple express generator utility for barebones Express/TS projects",
   "main": "dist/index.js",
+  "bin": {
+    "simply-express-generator": "dist/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/index.js",
     "dev": "ts-node ./src/index.ts",
     "prepublishOnly": "npm run build",
     "prepare": "npm run build"
-  },  
+  },
   "keywords": [],
   "author": "Marcos J. Peña Pollastri (@marcosppollastri)",
   "license": "ISC",
@@ -49,5 +52,11 @@
       "^@src/(.*)$": "<rootDir>/src/$1",
       "^@test/(.*)$": "<rootDir>/test/$1"
     }
-  }
+  },
+  "prepublishOnly": "npm run build",
+  "prepare": "npm run build",
+  "files": [
+    "dist/",
+    "template"
+  ]
 }

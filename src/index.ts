@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Command } from 'commander';
 import * as fs from 'fs-extra';
 import * as path from 'node:path';
@@ -11,7 +12,7 @@ program
   .action(async (projectName: string) => {
     try {
       console.log(`Creating a new project: ${projectName}`);
-      const templateDir = path.resolve(__dirname, '../template/express-ts');
+      const templateDir = path.resolve(__dirname, '../template/simply-express-ts');
       const targetDir = path.resolve(process.cwd(), projectName);
 
       await fs.copy(templateDir, targetDir);

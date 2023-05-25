@@ -14,6 +14,8 @@
 
 Simply Express Generator is a simple command-line utility for generating barebones Express/TypeScript projects. If you're tired of existing Express project generators that are either outdated or too bloated, this utility is for you. 
 
+This project is in early development and mostly for personal use. It's planned to include more features and more complete template in the future.
+
 ## Features
 
 - Quick setup with TypeScript, Jest, ESLint. ✅
