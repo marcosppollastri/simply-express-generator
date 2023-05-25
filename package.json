@@ -1,6 +1,6 @@
 {
   "name": "simply-express-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple express generator utility for barebones Express/TS projects",
   "main": "dist/index.js",
   "bin": {
@@ -58,5 +58,9 @@
   "files": [
     "dist/",
     "template"
-  ]
+  ],
+  "repository": { 
+    "type": "git", 
+    "url": "https://github.com/marcosppollastri/simply-express-generator" 
+  }
 }
