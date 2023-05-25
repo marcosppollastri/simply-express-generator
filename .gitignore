@@ -1,0 +1,29 @@
+# TypeScript specific ignores
+*.tsbuildinfo
+
+# IDE and editor ignores
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+*.komodotools
+*.kate-swp
+*.kate-swp.*
+*~.nib
+*.swp
+*~
+*.swp
+.DS_Store
+
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+
+# Testing
+coverage/
+debug_project
+
+# Package files
+npm-debug.log
+yarn-error.log

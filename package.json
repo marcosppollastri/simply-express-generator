@@ -1,0 +1,53 @@
+{
+  "name": "simply-express-generator",
+  "version": "0.1.0",
+  "description": "A simple express generator utility for barebones Express/TS projects",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "ts-node ./src/index.ts",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
+  },  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.2.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "commander": "^10.0.1",
+    "fs-extra": "^11.1.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "testRegex": ".*\\.(test|spec)\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "coveragePathIgnorePatterns": [
+      "/dist/",
+      "/test/",
+      "/node_modules/",
+      "/.eslintrc\\.js"
+    ],
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@src/(.*)$": "<rootDir>/src/$1",
+      "^@test/(.*)$": "<rootDir>/test/$1"
+    }
+  }
+}
