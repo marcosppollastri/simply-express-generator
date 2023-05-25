@@ -9,7 +9,7 @@
 </div>
 
 <p align="center">
-    <img src="https://github.com/marcosppollastri/simply-express-generator/blob/main/logo.svg?raw=true" alt="Logo" width="200" />
+    <img src="https://github.com/marcosppollastri/simply-express-generator/blob/master/logo.svg?raw=true" alt="Logo" width="200" />
 </p>
 
 Simply Express Generator is a simple command-line utility for generating barebones Express/TypeScript projects. If you're tired of existing Express project generators that are either outdated or too bloated, this utility is for you. 
