@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+    <style>
+        .large { font: bold 90px sans-serif; fill: #1f618d; }
+        .small { font: bold 30px sans-serif; fill: #1f618d; }
+    </style>
+    <text class="large" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+        Simply
+    </text>
+    <text class="small" x="50%" y="80%" dominant-baseline="middle" text-anchor="middle">
+        Express Generator
+    </text>
+</svg>

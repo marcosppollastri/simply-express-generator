@@ -2,23 +2,23 @@
 
 <div align="center">
 
-[![Build Status](https://github.com/marcosppollastri/simply-express-generator/actions/workflows/main.yml/badge.svg)](https://github.com/marcosppollastri/simply-express-generator/actions)
+<!-- [![Build Status](https://github.com/marcosppollastri/simply-express-generator/actions/workflows/main.yml/badge.svg)](https://github.com/marcosppollastri/simply-express-generator/actions) -->
 [![NPM version](https://img.shields.io/npm/v/simply-express-generator.svg?style=flat)](https://www.npmjs.com/package/simply-express-generator)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 </div>
 
 <p align="center">
-    <img src="https://github.com/marcosppollastri/simply-express-generator/blob/main/logo.png?raw=true" alt="Logo" width="200" />
+    <img src="https://github.com/marcosppollastri/simply-express-generator/blob/main/logo.svg?raw=true" alt="Logo" width="200" />
 </p>
 
 Simply Express Generator is a simple command-line utility for generating barebones Express/TypeScript projects. If you're tired of existing Express project generators that are either outdated or too bloated, this utility is for you. 
 
 ## Features
 
-- Quick setup with TypeScript, Jest, ESLint, and optional Babel configurations.
-- Personalized folder organization.
-- Simple command to generate a new project.
+- Quick setup with TypeScript, Jest, ESLint. ✅
+- Personalized folder organization. 🚧
+- Simple command to generate a new project. ✅
 
 ## Getting Started
 
