@@ -13,7 +13,7 @@
     "baseUrl": "./",
     "paths": {
       "@src/*": ["src/*"],
-      "@test/*": ["test/*"]
+      "@test/*": ["tests/*"]
     },
     "incremental": true,
     "skipLibCheck": true,
@@ -23,6 +23,6 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/index.ts"],
   "exclude": ["node_modules"]
 }
