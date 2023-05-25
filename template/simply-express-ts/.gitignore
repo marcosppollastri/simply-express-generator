@@ -1,9 +1,8 @@
-# TypeScript specific ignores
-*.tsbuildinfo
 
 # IDE and editor ignores
-.vscode/
-.idea/
+# Editors
+.idea
+*.iml
 *.sublime-project
 *.sublime-workspace
 *.komodoproject
@@ -16,8 +15,13 @@
 *.swp
 .DS_Store
 
-# Build output
-dist/
+pids
+logs
+results
+tmp
+
+# Ignore built ts files
+dist/**/*
 
 # Dependencies
 node_modules/
@@ -28,3 +32,6 @@ coverage/
 # Package files
 npm-debug.log
 yarn-error.log
+
+# API keys and secrets
+.env
