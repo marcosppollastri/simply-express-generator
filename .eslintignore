@@ -1,0 +1,8 @@
+# Directories
+node_modules/
+dist/
+tests/
+
+# Files
+*.js
+*.d.ts

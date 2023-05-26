@@ -1,1 +1,0 @@
-export { AppRouter } from '@src/routes/AppRouter';

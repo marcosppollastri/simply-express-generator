@@ -1,7 +1,6 @@
 import { Command } from 'commander';
 import * as fs from 'fs-extra';
 import * as path from 'node:path';
-import { run } from '../src/index';
 
 jest.mock('fs-extra');
 jest.mock('path');
