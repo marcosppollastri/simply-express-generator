@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-import { MainProgram } from './Main';
-
+import {mainProgram} from './main';
 
 if (require.main === module) {
-  MainProgram(process.argv);
+    mainProgram(process.argv);
 }
 

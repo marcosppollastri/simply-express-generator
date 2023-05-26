@@ -1,1 +1,0 @@
-export { AppController } from "@src/controllers/AppController";
