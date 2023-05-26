@@ -3,48 +3,48 @@ moduleAlias.addAlias('@src', __dirname);
 import {Command} from 'commander';
 import * as packageJson from '../package.json';
 import * as fs from 'fs-extra';
-import * as path from 'node:path';
 import { execSync } from 'node:child_process';
 import { config } from '@src/config';
+import { Directory } from '@src/classes';
 
 export async function mainProgram(argv: string[]) {
     const program = new Command();
     program
-        .command('new <project-name>')
-        .description('Create a new project')
         .version(packageJson.version)
-        .action(async (projectName: string) => {
+        .command('new <project-name>')
+        .option('-o, --overwrite', 'Overwrites the target directory')
+        .description('Create a new project')
+        .action(async (projectName: string, options: {overwrite: boolean}) => {
+            const { overwrite } = options;
             try {
                 console.log(`Creating a new project: ${projectName}`);
-                const tempDir = path.resolve(__dirname, '../temp');
-                if(!fs.existsSync(tempDir)){
-                    fs.mkdirSync(tempDir);
-                } else {
-                    fs.removeSync(tempDir);
-                    fs.mkdirSync(tempDir);
-                }
-                const targetDir = path.resolve(process.cwd(), projectName);
-                const gitOnTarget = path.resolve(targetDir, '.git');
+                const temp = new Directory('../temp', __dirname);
+                const target = new Directory(projectName, process.cwd());
+                const gitOnTarget = target.getSubDirectory('.git');
+                await temp.create({overwrite: true});
+                await target.create({overwrite});
 
 				
 
 
                 // Clone template into a temporary directory
-                execSync(`git clone ${config.TEMPLATE_REPO} ${tempDir}`, {
+                execSync(`git clone ${config.TEMPLATE_REPO} ${temp.path}`, {
                     stdio: 'inherit', // Show git output in the console
                 });
 
                 // Copy template into the target directory
-                await fs.copySync(tempDir, targetDir, {
+                fs.copySync(temp.path, target.path, {
                     overwrite: true
                 });
 
                 // Delete the temporary directory
-                await fs.removeSync(gitOnTarget);
-                await fs.removeSync(tempDir);
+                fs.removeSync(gitOnTarget.path);
+                fs.removeSync(temp.path);
 
 
                 console.log('Project created!');
+                console.log('Go to the project folder and install the dependencies with npm or yarn');
+                console.log('Test the project with npm run dev');
             } catch (error) {
                 console.error('Error while creating your project: ', error.message);
                 throw error;
