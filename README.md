@@ -38,6 +38,15 @@ This project is in early development and mostly for personal use. It's planned t
 
 This will create a new folder with the specified project name and set up a base Express/TypeScript project inside.
 
+## Options
+
+Simply Express Generator will ask you if you want to overwrite if the project directory already exists, you can bypass this with the `-o --overwrite` flag.
+
+```bash
+simply-express-generator new <project-name> --overwrite
+```
+
+
 ## Contributing
 
 Contributions, issues and feature requests are welcome! Feel free to check [issues page](https://github.com/marcosppollastri/simply-express-generator/issues).
