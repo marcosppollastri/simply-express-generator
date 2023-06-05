@@ -38,6 +38,13 @@ This project is in early development and mostly for personal use. It's planned t
 
 This will create a new folder with the specified project name and set up a base Express/TypeScript project inside.
 
+### npx
+You can also use `npx` to use Simply Express Generator without installing globally:
+
+```bash
+npx simply-express-generator new <project-name>
+```
+
 ## Options
 
 Simply Express Generator will ask you if you want to overwrite if the project directory already exists, you can bypass this with the `-o --overwrite` flag.
