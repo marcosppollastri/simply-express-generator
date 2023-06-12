@@ -1,6 +1,6 @@
 {
   "name": "simply-express-generator",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A simple express generator utility for barebones Express/TS projects",
   "main": "dist/index.js",
   "bin": {
@@ -54,8 +54,7 @@
     "commander": "^10.0.1",
     "fs-extra": "^11.1.1",
     "inquirer": "^8.2.5",
-    "module-alias": "^2.2.2",
-    "simply-express-generator": "file:simply-express-generator-0.3.0-beta.0.tgz"
+    "module-alias": "^2.2.2"
   },
   "jest": {
     "moduleFileExtensions": [
