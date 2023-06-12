@@ -1,6 +1,6 @@
 {
   "name": "simply-express-generator",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A simple express generator utility for barebones Express/TS projects",
   "main": "dist/index.js",
   "bin": {
@@ -21,13 +21,16 @@
   "license": "ISC",
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
+    "@types/inquirer": "^8.2.6",
     "@types/jest": "^29.5.1",
+    "@types/mock-fs": "^4.13.1",
     "@types/module-alias": "^2.0.1",
     "@types/node": "^20.2.3",
     "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@typescript-eslint/parser": "^5.59.7",
     "eslint": "^8.41.0",
     "jest": "^29.5.0",
+    "mock-fs": "^5.2.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
@@ -36,6 +39,7 @@
   "dependencies": {
     "commander": "^10.0.1",
     "fs-extra": "^11.1.1",
+    "inquirer": "^8.2.5",
     "module-alias": "^2.2.2"
   },
   "jest": {
