@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, rmSync } from 'fs';
 import { resolve } from 'node:path';
 import * as readline from 'readline';
+import * as inquirer from 'inquirer'
 
 export interface ICreateDirectoryOptions {
     overwrite: boolean
@@ -26,31 +27,30 @@ export class Directory {
         return new Directory(subDirectoryPath);
     }
 
-    create(options: ICreateDirectoryOptions = {
-        overwrite: false
-    }): Promise<void> {
-        return new Promise((resolve, reject) => {
+    async create(options: ICreateDirectoryOptions = { overwrite: false }): Promise<void> {
+        return new Promise(async (resolve, reject) => {
             if (this.exists()) {
                 if (options.overwrite) {
                     rmSync(this.path, { recursive: true });
                     mkdirSync(this.path, { recursive: true });
                     resolve();
                 } else {
-                    const rl = readline.createInterface({
-                        input: process.stdin,
-                        output: process.stdout
-                    });
-
-                    rl.question(`Directory ${this.path} already exists.\nDo you want to overwrite? (yes/no): `, (answer) => {
-                        rl.close();
-                        if (answer.toLowerCase() === 'yes' || answer.toLowerCase() === 'y') {
-                            rmSync(this.path, { recursive: true });
-                            mkdirSync(this.path, { recursive: true });
-                            resolve();
-                        } else {
-                            reject(new Error(`Directory ${this.path} already exists.`));
+                    const answers = await inquirer.prompt<{ overwrite: boolean }>([
+                        {
+                            type: 'confirm',
+                            name: 'overwrite',
+                            message: `Directory ${this.path} already exists.\nDo you want to overwrite?`,
+                            default: false
                         }
-                    });
+                    ]);
+
+                    if (answers.overwrite) {
+                        rmSync(this.path, { recursive: true });
+                        mkdirSync(this.path, { recursive: true });
+                        resolve();
+                    } else {
+                        reject(new Error(`Directory ${this.path} already exists.`));
+                    }
                 }
             } else {
                 mkdirSync(this.path, { recursive: true });
