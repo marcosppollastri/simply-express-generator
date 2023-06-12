@@ -1,7 +1,6 @@
 import { existsSync, mkdirSync, rmSync } from 'fs';
 import { resolve } from 'node:path';
-import * as readline from 'readline';
-import * as inquirer from 'inquirer'
+import * as inquirer from 'inquirer';
 
 export interface ICreateDirectoryOptions {
     overwrite: boolean

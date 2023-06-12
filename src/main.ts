@@ -4,7 +4,6 @@ import {Command} from 'commander';
 import * as packageJson from '../package.json';
 import * as fs from 'fs-extra';
 import { execSync } from 'node:child_process';
-import { config } from '@src/config';
 import { Directory } from '@src/classes';
 import { Prompter } from './classes';
 
@@ -19,7 +18,7 @@ export async function mainProgram(argv: string[]) {
             const { overwrite } = options;
             try {
                 console.log(`Creating a new project: ${projectName}`);
-                const { projectType } = await Prompter.ask()
+                const { projectType } = await Prompter.ask();
                 const temp = new Directory('../temp', __dirname);
                 const target = new Directory(projectName, process.cwd());
                 const gitOnTarget = target.getSubDirectory('.git');
