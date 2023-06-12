@@ -28,34 +28,26 @@ export class Directory {
     }
 
     async create(options: ICreateDirectoryOptions = { overwrite: false }): Promise<void> {
-        return new Promise(async (resolve, reject) => {
-            if (this.exists()) {
-                if (options.overwrite) {
-                    rmSync(this.path, { recursive: true });
-                    mkdirSync(this.path, { recursive: true });
-                    resolve();
-                } else {
-                    const answers = await inquirer.prompt<{ overwrite: boolean }>([
-                        {
-                            type: 'confirm',
-                            name: 'overwrite',
-                            message: `Directory ${this.path} already exists.\nDo you want to overwrite?`,
-                            default: false
-                        }
-                    ]);
-
-                    if (answers.overwrite) {
-                        rmSync(this.path, { recursive: true });
-                        mkdirSync(this.path, { recursive: true });
-                        resolve();
-                    } else {
-                        reject(new Error(`Directory ${this.path} already exists.`));
-                    }
+        if (this.exists() && !options.overwrite) {
+            const answers = await inquirer.prompt<{ overwrite: boolean }>([
+                {
+                    type: 'confirm',
+                    name: 'overwrite',
+                    message: `Directory ${this.path} already exists.\nDo you want to overwrite?`,
+                    default: false
                 }
-            } else {
-                mkdirSync(this.path, { recursive: true });
-                resolve();
+            ]);
+    
+            if (!answers.overwrite) {
+                throw new Error(`Directory ${this.path} already exists.`);
             }
-        });
+        }
+    
+        if (this.exists()) {
+            rmSync(this.path, { recursive: true });
+        }
+    
+        mkdirSync(this.path, { recursive: true });
     }
+    
 }
