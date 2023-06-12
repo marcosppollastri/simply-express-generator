@@ -12,15 +12,28 @@
     <img src="https://github.com/marcosppollastri/simply-express-generator/blob/master/logo.svg?raw=true" alt="Logo" width="500" />
 </p>
 
-Simply Express Generator is a simple command-line utility for generating barebones Express/TypeScript projects. If you're tired of existing Express project generators that are either outdated or too bloated, this utility is for you. 
+Simply Express Generator is a simple command-line utility for generating barebones Express/TypeScript projects. If you're tired of existing Express project generators that are either outdated or too bloated, this utility is for you.
 
-This project is in early development and mostly for personal use. It's planned to include more features and more complete template in the future.
+This project is in active development and aims to offer more features and more comprehensive templates in the future.
 
-## Features
+## 🌟 New Features
 
-- Quick setup with TypeScript, Jest, ESLint. ✅
-- Personalized folder organization. 🚧
-- Simple command to generate a new project. ✅
+- Multi-template support: Choose the template that best suits your needs - `Express + TS` or `NPM Library + TS`. 💪
+- Improved user interaction: Enjoy a better experience during project setup. 😎
+
+## 🚀 Templates You Can Generate
+
+1. **Express + TS**: A simple ExpressJS server written in TypeScript. 
+2. **NPM Library + TS**: A simple starter template for creating an NPM package written in TypeScript.
+
+Both templates are designed to get your project up and running in no time!
+
+## 🔗 Template Repositories
+
+- [Express + TS Template Repository](https://github.com/marcosppollastri/simply-express-ts-template.git)
+- [NPM Library + TS Template Repository](https://github.com/marcosppollastri/simply-npm-package-template.git)
+
+Feel free to contribute or use these as stand-alone templates!
 
 ## Getting Started
 
@@ -44,20 +57,14 @@ You can also use `npx` to use Simply Express Generator without installing global
 ```bash
 npx simply-express-generator new <project-name>
 ```
-
 ## Options
-
-Simply Express Generator will ask you if you want to overwrite if the project directory already exists, you can bypass this with the `-o --overwrite` flag.
+Simply Express Generator will ask you if you want to overwrite if the project directory already exists, you can bypass this with the `-o` `--overwrite` flag.
 
 ```bash
 simply-express-generator new <project-name> --overwrite
 ```
-
-
 ## Contributing
-
-Contributions, issues and feature requests are welcome! Feel free to check [issues page](https://github.com/marcosppollastri/simply-express-generator/issues).
+Contributions, issues and feature requests are welcome! Feel free to check issues page.
 
 ## License
-
-This project is [ISC](https://opensource.org/licenses/ISC) licensed.
+This project is [ISC](https://opensource.org/license/isc-license-txt/) licensed.
